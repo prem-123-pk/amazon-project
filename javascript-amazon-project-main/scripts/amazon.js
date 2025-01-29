@@ -1,3 +1,5 @@
+import {cart} from '../data/cart.js';
+
 let productsHTML  = ' ';
 products.forEach((product)=>{
 productsHTML += `
@@ -23,7 +25,7 @@ productsHTML += `
       $${(product.priceCents / 100).toFixed(2)}
     </div>
 
-    <div class="product-quantity-container">
+    <div class="product-quantity-container js-quantity-selector">
       <select>
         <option selected value="1">1</option>
         <option value="2">2</option>
@@ -52,7 +54,7 @@ productsHTML += `
 `
 })
 
- document.querySelector('.js-products-grid').innerHTML = productsHTML
+ document.querySelector('.js-products-grid').innerHTML = productsHTML;
  document.querySelectorAll ('.js-add-to-cart')
   .forEach((button) =>{
     button.addEventListener('click',() => {
@@ -69,14 +71,16 @@ productsHTML += `
       } else {
         // this is single cart cart feartue which add one by one
         cart.push({
-          productId,
+          productId : productId,
           quantity : 1
          });
       }
       let cartQuantity = 0;
       cart.forEach((item) =>{
         cartQuantity += item.quantity
-      })
+
+      });
       document.querySelector('.js-cart-quantity').innerHTML = cartQuantity
-    })
+      document.querySelector(`.js-quantity-selector-${productId}`)
+    });
  });

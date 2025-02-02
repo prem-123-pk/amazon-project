@@ -656,5 +656,20 @@ export const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id : "ab-123",
+    image : "images/products/samsung-s25-ultra.jfif",
+    name : "Samsung S25 ultra",
+    rating: {
+      stars: 5,
+      count : 2000
+    },
+    priceCents : 142000,
+    keywords : [
+      "samsung",
+      "phone"
+    ]
+    
   }
 ];

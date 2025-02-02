@@ -58,8 +58,8 @@ productsHTML += `
 
 function updateToCart (){
   let cartQuantity = 0;
-      cart.forEach((item) =>{
-        cartQuantity += item.quantity
+      cart.forEach((CartItem) =>{
+        cartQuantity += CartItem.quantity
         document.querySelector('.js-cart-quantity').innerHTML = cartQuantity
 });
 };

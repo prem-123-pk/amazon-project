@@ -670,6 +670,18 @@ export const products = [
       "samsung",
       "phone"
     ]
-    
+  },{
+    id : 'ab-hp-laptop',
+    image : 'images/products/hp-pavillion-15.jpg',
+    name : 'Hp-Pavillion-15',
+    rating : {
+      stars : 4.5,
+      count : 5000
+    },
+    priceCents : 65000,
+    keywords : [
+    "laptop",
+    "hp"
+    ]
   }
 ];

@@ -1,12 +1,16 @@
 import {products} from '../data/products.js';
 
 export const cart = [
-  {productId : 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
-   quantity : 2
+  {
+  productId : 'ab-123',
+  quantity  : 1
 },{
-  productId : '15b6fc6f-327a-4ec4-896f-486349e85a3d',
-  quantity : 1
-}  
+  productId : 'ab-hp-laptop',
+  quantity  : 2
+},{
+  productId : 'bc2847e9-5323-403f-b7cf-57fde044a955',
+  quantity  : 2
+}
 ]
  export function addToCart (productId) {
   let matchingItem;

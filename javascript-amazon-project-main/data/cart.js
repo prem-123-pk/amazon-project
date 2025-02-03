@@ -1,14 +1,11 @@
 import {products} from '../data/products.js';
 
-export const cart = [
+export let cart = [
   {
   productId : 'ab-123',
-  quantity  : 1
+  quantity  : 3
 },{
   productId : 'ab-hp-laptop',
-  quantity  : 2
-},{
-  productId : 'bc2847e9-5323-403f-b7cf-57fde044a955',
   quantity  : 2
 }
 ]
@@ -29,4 +26,14 @@ export const cart = [
       quantity : 1
      });
   }
-}
+};
+// deleted cartItems gonna store in the new cart
+export function removeFromCart (productId){
+  const newCart = [];
+  cart.forEach((cartItem) =>{
+    if(cartItem.productId !== productId){
+      newCart.push(cartItem);
+    }
+  });
+  cart = newCart;
+} 

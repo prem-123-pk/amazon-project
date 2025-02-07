@@ -1,14 +1,24 @@
 import {products} from '../data/products.js';
 
-export let cart = [
-  {
-  productId : 'ab-123',
-  quantity  : 3
-},{
-  productId : 'ab-hp-laptop',
-  quantity  : 2
+export let cart = JSON.parse(localStorage.getItem('cart'))
+
+if(!cart){
+  cart = [
+    {
+    productId : 'ab-123',
+    quantity  : 3
+  },{
+    productId : 'ab-hp-laptop',
+    quantity  : 2
+  }
+  ]
 }
-]
+
+
+// function to store cart items is local storage
+function saveToStorage (){
+  localStorage.setItem('cart',JSON.stringify(cart))
+}
  export function addToCart (productId) {
   let matchingItem;
   cart.forEach((CartItem) =>{
@@ -26,6 +36,7 @@ export let cart = [
       quantity : 1
      });
   }
+  saveToStorage()
 };
 // deleted cartItems gonna store in the new cart
 export function removeFromCart (productId){
@@ -36,4 +47,5 @@ export function removeFromCart (productId){
     }
   });
   cart = newCart;
+  saveToStorage()
 } 

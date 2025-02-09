@@ -6,10 +6,12 @@ if(!cart){
   cart = [
     {
     productId : 'ab-123',
-    quantity  : 3
+    quantity  : 3,
+    deliveryOptionId : '1'
   },{
     productId : 'ab-hp-laptop',
-    quantity  : 2
+    quantity  : 2,
+    deliveryOptionId : '2'
   }
   ]
 }
@@ -19,6 +21,7 @@ if(!cart){
 function saveToStorage (){
   localStorage.setItem('cart',JSON.stringify(cart))
 }
+// add to cart
  export function addToCart (productId) {
   let matchingItem;
   cart.forEach((CartItem) =>{
@@ -32,8 +35,9 @@ function saveToStorage (){
   } else {
     // this is single cart cart feartue which add one by one
     cart.push({
-      productId : productId,
-      quantity : 1
+      productId,
+      quantity : 1,
+      deliveryOptionId : '1'
      });
   }
   saveToStorage()
@@ -47,5 +51,5 @@ export function removeFromCart (productId){
     }
   });
   cart = newCart;
-  saveToStorage()
+   saveToStorage()
 } 

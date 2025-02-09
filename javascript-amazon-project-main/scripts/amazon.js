@@ -9,7 +9,7 @@ productsHTML += `
   <div class="product-container">
       <div class="product-image-container">
         <img class="product-image"
-        src="${product.image}".jpg>
+        src="${product.image}">
       </div>
 
     <div class="product-name limit-text-to-2-lines">
@@ -28,8 +28,8 @@ productsHTML += `
       $${currency(product.priceCents)}
     </div>
 
-    <div class="product-quantity-container js-quantity-selector">
-      <select>
+    <div class="product-quantity-container">
+      <select class= "js-quantity-selector-${product.id}" >
         <option selected value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -50,7 +50,8 @@ productsHTML += `
       Added
     </div>
 
-    <button class="add-to-cart-button button-primary js-add-to-cart" data-product-id ="${product.id}">
+    <button class="add-to-cart-button button-primary js-add-to-cart"
+     data-product-id ="${product.id}">
       Add to Cart
     </button>
   </div>
@@ -61,11 +62,12 @@ productsHTML += `
 function updateToCart (){
   let cartQuantity = 0;
       cart.forEach((CartItem) =>{
-        cartQuantity += CartItem.quantity
-        document.querySelector('.js-cart-quantity').innerHTML = cartQuantity
+        cartQuantity += CartItem.quantity;
+       
 });
+document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 };
-
+updateToCart();
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
  document.querySelectorAll ('.js-add-to-cart')
   .forEach((button) =>{

@@ -25,7 +25,7 @@ const paymentsummaryHTML =
     </div>
 
     <div class="payment-summary-row">
-      <div>Items (2):</div>
+      <div>Items :</div>
       <div class="payment-summary-money">
         $${currency(productPriceCents)}
       </div>
